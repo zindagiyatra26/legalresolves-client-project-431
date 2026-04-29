@@ -160,17 +160,20 @@ const Footer = () => {
 
         <div className="w-full flex items-center justify-center mb-10">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <img
-              src={legalResolvesLogo}
-              alt="LegalResolves Logo"
-              className="h-8 object-contain"
-            />
             <p className="whitespace-nowrap">
-              Built & Designed by{" "}
-              <span className="font-semibold text-gray-700">
-                LegalResolves
-              </span>
+              Built & Designed by
             </p>
+            <a 
+              href="https://legalresolves.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <img
+                src={legalResolvesLogo}
+                alt="LegalResolves Logo"
+                className="h-7 object-contain"
+              />
+            </a>
           </div>
         </div>
 
