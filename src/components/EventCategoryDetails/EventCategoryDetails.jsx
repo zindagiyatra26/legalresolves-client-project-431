@@ -10,6 +10,12 @@ import {
   Sparkles,
   Quote
 } from 'lucide-react';
+import event1 from '../../assets/event_1.jpg'
+import event2 from '../../assets/event_2.jpg'
+import event3 from '../../assets/event_3.jpg'
+import event4 from '../../assets/event_4.jpg'
+import event5 from '../../assets/event_5.jpg'
+import event6 from '../../assets/event_6.jpg'
 
 const EventCategoryDetails = () => {
   const navigate = useNavigate();
@@ -18,31 +24,60 @@ const EventCategoryDetails = () => {
 
   // This would typically come from a data file or API
   const eventData = {
-    birthday: {
-      title: "Birthday Celebrations",
-      subtitle: "Theme-based parties from 1st to 100th",
-      heroImg: "https://images.unsplash.com/photo-1530103043960-ef38714abb15",
-      description: "We handle everything from venue sourcing to surprise coordination. Whether it's a milestone 50th or a magical themed 1st birthday, we ensure the cake is sweet and the memories are sweeter.",
-      features: ["Custom Theme Design", "Cake & Catering Coordination", "Professional Photography", "Entertainment (DJ/Live Music)"],
-      process: ["Concept Design", "Venue Selection", "Vendor Booking", "D-Day Execution"]
-    },
-    destination: {
-      title: "Destination Events",
-      subtitle: "Where Travel meets Celebration",
-      heroImg: "https://images.unsplash.com/photo-1519741497674-611481863552",
-      description: "Our signature service. We plan events AT destinations—a birthday in a Rajasthan fort or an engagement in Goa. We handle travel logistics AND event execution so you only have to show up.",
-      features: ["Guest Travel & Stay", "Local Vendor Coordination", "Scenic Venue Scouting", "On-site Management"],
-      process: ["Location Picking", "Logistics Planning", "Decor Setup", "Guest Management"]
-    },
-    corporate: {
-      title: "Corporate Events",
-      subtitle: "Professional. Punctual. Perfect.",
-      heroImg: "https://images.unsplash.com/photo-1511578314322-379afb476865",
-      description: "From annual day awards to team-building treks in the Himalayas. We offer a dedicated enquiry process for our corporate partners to ensure brand alignment and seamless flow.",
-      features: ["Product Launches", "Award Ceremonies", "Team Outings", "Conferences & Seminars"],
-      process: ["Briefing", "Proposal & Budgeting", "Execution Strategy", "Post-Event Reporting"]
-    }
-  };
+  birthday: {
+    title: "Birthday Celebrations",
+    subtitle: "Theme-based parties from 1st to 100th",
+    heroImg: event1,
+    description: "We handle everything from venue sourcing to surprise coordination. Whether it's a milestone 50th or a magical themed 1st birthday, we ensure the cake is sweet and the memories are sweeter.",
+    features: ["Custom Theme Design", "Cake & Catering Coordination", "Professional Photography", "Entertainment (DJ/Live Music)"],
+    process: ["Concept Design", "Venue Selection", "Vendor Booking", "D-Day Execution"]
+  },
+
+  "pre-wedding": {
+    title: "Pre-Wedding Events",
+    subtitle: "Celebrate love before the big day",
+    heroImg: event2,
+    description: "From Mehendi to Haldi and Sangeet nights, we craft vibrant and unforgettable pre-wedding experiences with stunning decor, music, and joyful vibes.",
+    features: ["Mehendi & Haldi Setup", "Sangeet Choreography", "Floral & Theme Decor", "Entertainment & Lighting"],
+    process: ["Theme Planning", "Venue Finalization", "Vendor Coordination", "Event Execution"]
+  },
+
+  destination: {
+    title: "Destination Events",
+    subtitle: "Where Travel meets Celebration",
+    heroImg: event3,
+    description: "Our signature service. We plan events AT destinations—a birthday in a Rajasthan fort or an engagement in Goa. We handle travel logistics AND event execution so you only have to show up.",
+    features: ["Guest Travel & Stay", "Local Vendor Coordination", "Scenic Venue Scouting", "On-site Management"],
+    process: ["Location Picking", "Logistics Planning", "Decor Setup", "Guest Management"]
+  },
+
+  corporate: {
+    title: "Corporate Events",
+    subtitle: "Professional. Punctual. Perfect.",
+    heroImg: event4,
+    description: "From annual day awards to team-building treks in the Himalayas. We offer a dedicated enquiry process for our corporate partners to ensure brand alignment and seamless flow.",
+    features: ["Product Launches", "Award Ceremonies", "Team Outings", "Conferences & Seminars"],
+    process: ["Briefing", "Proposal & Budgeting", "Execution Strategy", "Post-Event Reporting"]
+  },
+
+  social: {
+    title: "Social Gatherings",
+    subtitle: "Moments that bring people together",
+    heroImg: event5,
+    description: "From college reunions to kitty parties and private celebrations, we create warm and engaging environments that make every gathering memorable.",
+    features: ["Customized Decor", "Catering Services", "Live Music / DJ", "Photography"],
+    process: ["Requirement Discussion", "Theme Planning", "Execution Setup", "Event Hosting"]
+  },
+
+  custom: {
+    title: "Custom Events",
+    subtitle: "Your vision, our execution",
+    heroImg: event6,
+    description: "Have something unique in mind? We specialize in personalized events tailored exactly to your imagination, with complete vendor and experience management.",
+    features: ["Personalized Planning", "Unique Themes", "End-to-End Coordination", "Flexible Budgeting"],
+    process: ["Idea Discussion", "Concept Creation", "Planning & Coordination", "Execution"]
+  }
+};
 
   const images = [
   "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
@@ -87,7 +122,7 @@ const EventCategoryDetails = () => {
             </div>
           </div>
           
-          <div className="relative aspect-video lg:aspect-square rounded-[15px] lg:rounded-[30px] overflow-hidden shadow-2xl border-4 border-white/5">
+          <div className="relative aspect-[5/4] lg:aspect-[5/4] rounded-[15px] lg:rounded-[30px] overflow-hidden shadow-2xl border-4 border-white/5">
             <img src={data.heroImg} className="w-full h-full object-cover" alt={data.title} />
             <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent" />
           </div>
@@ -130,7 +165,7 @@ const EventCategoryDetails = () => {
       </div>
 
      {/* --- GALLERY TEASER --- */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-6 py-10 lg:py-24 text-center">
+      {/* <div className="max-w-7xl mx-auto px-4 lg:px-6 py-10 lg:py-24 text-center">
         <h3 className="text-3xl font-semibold uppercase mb-12 tracking-tighter">
           Event <span className="text-amber-500">Showcase</span>
         </h3>
@@ -155,10 +190,10 @@ const EventCategoryDetails = () => {
           ))}
           
         </div>
-      </div>
+      </div> */}
 
       {/* --- ENQUIRY CTA --- */}
-      <div className="max-w-5xl mx-auto px-4 lg:px-6 pb-24">
+      <div className="max-w-5xl mx-auto px-4 lg:px-6 pt-24 pb-24">
         <div className={`px-4 py-8 lg:p-12 rounded-[20px] border text-center space-y-8 ${darkMode ? 'bg-gradient-to-br from-purple-900/20 to-slate-900 border-white/5' : 'bg-purple-900 text-white'}`}>
           <Sparkles className="mx-auto text-amber-500" size={48} />
           <h2 className="text-3xl lg:text-4xl font-semibold uppercase tracking-tighter">Ready to plan your <br/> {data.title}?</h2>

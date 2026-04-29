@@ -6,6 +6,7 @@ import {
 import { FaInstagram, FaFacebookF, FaYoutube, FaPinterestP, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
 import logoIcon from '../../assets/logo_icon.png';
 import logoText from '../../assets/logo_text.png';
+import legalResolvesLogo from '../../assets/legalresolveslogo.png';
 import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
@@ -25,7 +26,7 @@ const Footer = () => {
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-amber-500/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2" />
 
       <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-10">
           
           {/* Brand Identity */}
           <div className="space-y-8">
@@ -153,6 +154,22 @@ const Footer = () => {
             </div>
             <p className="text-[10px] text-slate-500 leading-relaxed font-medium uppercase tracking-widest">
               Subscribe to get seasonal travel deals and celebration ideas.
+            </p>
+          </div>
+        </div>
+
+        <div className="w-full flex items-center justify-center mb-10">
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <img
+              src={legalResolvesLogo}
+              alt="LegalResolves Logo"
+              className="h-8 object-contain"
+            />
+            <p className="whitespace-nowrap">
+              Built & Designed by{" "}
+              <span className="font-semibold text-gray-700">
+                LegalResolves
+              </span>
             </p>
           </div>
         </div>

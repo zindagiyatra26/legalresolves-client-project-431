@@ -12,8 +12,11 @@ import {
   Ticket,
   Zap,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const Tickets = () => {
+   const navigate = useNavigate();
   const { darkMode } = useOutletContext();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -113,6 +116,17 @@ const Tickets = () => {
     <div
       className={`transition-colors duration-500 min-h-screen ${darkMode ? "bg-slate-950 text-white" : "bg-white text-slate-900"}`}
     >
+     <button
+      onClick={() => navigate(-1)}
+      className={`absolute top-4 left-4  md:top-4 md:left-4 z-50 flex items-center gap-2 px-4 py-2 rounded-xl backdrop-blur-md border transition-all duration-300 shadow-lg ${
+        darkMode
+          ? "bg-white/10 border-white/20 text-white hover:bg-white/20"
+          : "bg-white/80 border-slate-200 text-slate-900 hover:bg-white"
+      }`}
+    >
+      <ArrowLeft size={18} />
+    </button>
+
       <div className="pb-0">
         <div className=" grid lg:grid-cols-12 gap-0 overflow-hidden">
           {/* LEFT SIDE: CONTENT (Purple Background) */}
@@ -127,8 +141,8 @@ const Tickets = () => {
 
             <div className="relative z-10 space-y-2 lg:space-y-4">
               <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-tighter leading-tight italic">
-                What is <br />
-                <span className="text-amber-500">Bulk Ticketing?</span>
+                <span className="ml-20 md:ml-0">What is</span> <br />
+                <span className="text-amber-500 ml-6 md:ml-0">Bulk Ticketing?</span>
               </h2>
               <p className="text-base lg:text-lg opacity-80 leading-relaxed font-medium">
                 When you organize group trips, school excursions, or corporate

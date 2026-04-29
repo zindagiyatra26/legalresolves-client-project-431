@@ -2,15 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useOutletContext, useNavigate } from 'react-router-dom';
 import { Clock, Users, Coffee, ChevronDown, CheckCircle2, ShieldCheck, MapPin, ArrowRight, Sparkles } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa6';
+import travel1 from '../../assets/travel_1.jpg'
+import travel2 from '../../assets/travel_2.jpg'
+import travel3 from '../../assets/travel_3.jpg'
+import travel4 from '../../assets/travel_4.jpg'
+import travel5 from '../../assets/travel_5.jpg'
+import travel6 from '../../assets/travel_6.jpg'
+import travel7 from '../../assets/travel_7.jpg'
 
 const packagesData = [
-  { id: 1, slug: "rajasthan-royal-culture", title: "Rajasthan Royal Culture", category: "Budget", price: "12,000", days: "5 Days", nights: "4 Nights", img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da", groupSize: "12-15", description: "Explore the land of kings with heritage stays and local desert experiences." },
-  { id: 2, slug: "spiti-valley-expedition", title: "Spiti Valley Expedition", category: "Trekking", price: "22,500", days: "8 Days", nights: "7 Nights", img: "https://images.unsplash.com/photo-1653844573020-71f77a0ccb8c?q=80&w=687&auto=format&fit=crop", groupSize: "8-10", description: "High altitude trekking through offbeat Himalayan villages." },
-  { id: 3, slug: "kerala-backwaters-soul", title: "Kerala Backwaters Soul", category: "Luxury", price: "85,000", days: "7 Days", nights: "6 Nights", img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944", groupSize: "Private", description: "Ultra-luxury houseboat stays and premium spa treatments." },
-  { id: 4, slug: "himachal-womens-trek", title: "Himachal Women's Trek", category: "Women-Only", price: "15,000", days: "4 Days", nights: "3 Nights", img: "https://images.unsplash.com/photo-1551632811-561732d1e306", groupSize: "10-12 (Women Only)", description: "Safe, empowering trekking spaces led by professional women guides." },
-  { id: 5, slug: "goa-solo-beach-break", title: "Goa Solo Beach Break", category: "Solo", price: "8,500", days: "3 Days", nights: "2 Nights", img: "https://images.unsplash.com/photo-1560179406-1c6c60e0dc76", groupSize: "Solo Curated Group", description: "Safe group tours for solo travellers joining a curated group." },
-  { id: 6, slug: "manali-romantic-escape", title: "Manali Romantic Escape", category: "Honeymoon", price: "45,000", days: "6 Days", nights: "5 Nights", img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23", groupSize: "Couple", description: "Candle-lit dinners, flower-decorated rooms, and photography packages." },
-  { id: 7, slug: "rishikesh-river-camping", title: "Rishikesh River Camping", category: "Camping", price: "4,500", days: "2 Days", nights: "1 Night", img: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4", groupSize: "Open Group", description: "Budget outdoor camping with bonfires, river rafting, and stargazing." }
+  { id: 1, slug: "rajasthan-royal-culture", title: "Rajasthan Royal Culture", category: "Budget", price: "12,000", days: "5 Days", nights: "4 Nights", img: travel1, groupSize: "12-15", description: "Explore the land of kings with heritage stays and local desert experiences." },
+  { id: 2, slug: "spiti-valley-expedition", title: "Spiti Valley Expedition", category: "Trekking", price: "22,500", days: "8 Days", nights: "7 Nights", img: travel2, groupSize: "8-10", description: "High altitude trekking through offbeat Himalayan villages." },
+  { id: 3, slug: "kerala-backwaters-soul", title: "Kerala Backwaters Soul", category: "Luxury", price: "85,000", days: "7 Days", nights: "6 Nights", img: travel3, groupSize: "Private", description: "Ultra-luxury houseboat stays and premium spa treatments." },
+  { id: 4, slug: "himachal-womens-trek", title: "Himachal Women's Trek", category: "Women-Only", price: "15,000", days: "4 Days", nights: "3 Nights", img: travel4, groupSize: "10-12 (Women Only)", description: "Safe, empowering trekking spaces led by professional women guides." },
+  { id: 5, slug: "goa-solo-beach-break", title: "Goa Solo Beach Break", category: "Solo", price: "8,500", days: "3 Days", nights: "2 Nights", img: travel5, groupSize: "Solo Curated Group", description: "Safe group tours for solo travellers joining a curated group." },
+  { id: 6, slug: "manali-romantic-escape", title: "Manali Romantic Escape", category: "Honeymoon", price: "45,000", days: "6 Days", nights: "5 Nights", img: travel6, groupSize: "Couple", description: "Candle-lit dinners, flower-decorated rooms, and photography packages." },
+  { id: 7, slug: "rishikesh-river-camping", title: "Rishikesh River Camping", category: "Camping", price: "4,500", days: "2 Days", nights: "1 Night", img: travel7, groupSize: "Open Group", description: "Budget outdoor camping with bonfires, river rafting, and stargazing." }
 ];
 
 const PackageDetails = () => {

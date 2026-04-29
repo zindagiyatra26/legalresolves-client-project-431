@@ -2,17 +2,22 @@ import React, { useState } from 'react';
 import { useOutletContext, Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Compass, Heart, ShieldCheck, Smile, Sparkles } from 'lucide-react';
 import HomeBg from '../../assets/homeBg.mp4';
+import HomePoster from '../../assets/homePoster.png';
 import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn } from 'react-icons/fa6';
+import thumb1 from '../../assets/home_thumb_1.jpg'
+import thumb2 from '../../assets/home_thumb_2.jpg'
+import thumb3 from '../../assets/home_thumb_3.jpg'
+import thumb4 from '../../assets/home_thumb_4.jpg'
 
 const Home = () => {
   const { darkMode } = useOutletContext();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const galleryThumbnails = [
-    "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-    "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1",
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+    thumb1,
+    thumb2,
+    thumb3,
+    thumb4
   ];
 
   const handleNext = () => setCurrentIndex((prev) => (prev + 1) % galleryThumbnails.length);
@@ -21,16 +26,18 @@ const Home = () => {
   return (
     <div id="home" className="relative lg:h-screen w-full overflow-hidden bg-black">
       {/* Background Video with Dark Overlay */}
-      <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-0 opacity-60 scale-105">
+      <video autoPlay muted loop playsInline
+      poster={HomePoster}
+      className="absolute inset-0 w-full h-full object-cover z-0 opacity-60 scale-105">
         <source src={HomeBg} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black z-[1]" />
+      <div className="absolute inset-0 backdrop-blur-xs bg-gradient-to-b from-black/40 via-transparent to-black z-[1]" />
 
       <main className="relative z-10 grid grid-cols-1 lg:grid-cols-12 h-full pt-30 pb-60 lg:pt-0 lg:pb-0">
         
         {/* Left Side: Editorial Content */}
         <div className="lg:col-span-7 flex flex-col justify-center px-4 sm:px-8 md:px-20 lg:pl-32 text-white">
-          <div className="space-y-8 animate-in fade-in slide-in-from-left duration-1000">
+          <div className="space-y-8 animate-in fade-in slide-in-from-left duration-1000 text-center sm:text-left">
             
             {/* Floating Trust Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full shadow-2xl">
@@ -45,7 +52,7 @@ const Home = () => {
               </h1>
               <div className="flex items-center gap-4">
                  <div className="h-[2px] w-20 bg-amber-500 hidden md:block" />
-                 <p className=" bg-white/10 backdrop-blur-md  rounded-xs shadow-2xl text-amber-400 font-bold tracking-[0.3em] uppercase text-xs">
+                 <p className="  text-amber-400 font-bold tracking-[0.3em] uppercase text-base md:text-xs">
                   Hum Hai Memories Bananewali Company
                  </p>
               </div>
@@ -55,7 +62,7 @@ const Home = () => {
             Every trip is a chapter. Every celebration is a memory. Let us write yours.
              </p>
 
-              <div className="flex flex-wrap items-center gap-4 md:gap-6">
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 md:gap-6">
               {/* Primary Action: Explore Trips */}
               <a 
                 href="#travel" 

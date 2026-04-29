@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { useOutletContext, Link } from 'react-router-dom';
 import { Users, Filter, Compass, Heart, Tent, Footprints, Wallet, Gem, User, ArrowRight, Sparkles, ShieldCheck, MapPin } from 'lucide-react';
+import womenThumb1 from '../../assets/travel_women_thumb_1.jpg'
+import womenThumb2 from '../../assets/travel_women_thumb_2.jpg'
 
+import travel1 from '../../assets/travel_1.jpg'
+import travel2 from '../../assets/travel_2.jpg'
+import travel3 from '../../assets/travel_3.jpg'
+import travel4 from '../../assets/travel_4.jpg'
+import travel5 from '../../assets/travel_5.jpg'
+import travel6 from '../../assets/travel_6.jpg'
+import travel7 from '../../assets/travel_7.jpg'
 
 const packagesData = [
   { 
@@ -12,7 +21,7 @@ const packagesData = [
     price: "12,000", 
     days: "5 Days", 
     nights: "4 Nights",
-    img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da",
+    img: travel1,
     groupSize: "12-15",
     description: "Explore the land of kings with heritage stays and local desert experiences."
   },
@@ -24,7 +33,7 @@ const packagesData = [
     price: "22,500", 
     days: "8 Days", 
     nights: "7 Nights",
-    img: "https://images.unsplash.com/photo-1653844573020-71f77a0ccb8c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: travel2,
     groupSize: "8-10",
     description: "High altitude trekking through offbeat Himalayan villages."
   },
@@ -36,7 +45,7 @@ const packagesData = [
     price: "85,000", 
     days: "7 Days", 
     nights: "6 Nights",
-    img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944",
+    img: travel3,
     groupSize: "Private",
     description: "Ultra-luxury houseboat stays and premium spa treatments."
   },
@@ -48,7 +57,7 @@ const packagesData = [
     price: "15,000", 
     days: "4 Days", 
     nights: "3 Nights",
-    img: "https://images.unsplash.com/photo-1551632811-561732d1e306",
+    img: travel4,
     groupSize: "10-12 (Women Only)",
     description: "Safe, empowering trekking spaces led by professional women guides."
   },
@@ -60,7 +69,7 @@ const packagesData = [
     price: "8,500", 
     days: "3 Days", 
     nights: "2 Nights",
-    img: "https://images.unsplash.com/photo-1560179406-1c6c60e0dc76?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: travel5,
     groupSize: "Solo Curated Group",
     description: "Safe group tours for solo travellers joining a curated group."
   },
@@ -72,7 +81,7 @@ const packagesData = [
     price: "45,000", 
     days: "6 Days", 
     nights: "5 Nights",
-    img: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23",
+    img: travel6,
     groupSize: "Couple",
     description: "Candle-lit dinners, flower-decorated rooms, and photography packages."
   },
@@ -84,7 +93,7 @@ const packagesData = [
     price: "4,500", 
     days: "2 Days", 
     nights: "1 Night",
-    img: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4",
+    img: travel7,
     groupSize: "Open Group",
     description: "Budget outdoor camping with bonfires, river rafting, and stargazing."
   }
@@ -138,7 +147,7 @@ const Travels = () => {
             {/* Primary Image: Empowerment/Safety */}
             <div className="absolute top-12 right-12 w-64 h-80 rounded-[40px] overflow-hidden border-4 border-white/20 shadow-2xl rotate-6 group-hover:rotate-3 transition-transform duration-700 z-20">
               <img 
-                src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80" 
+                src={womenThumb1} 
                 alt="Women Empowerment" 
                 className="w-full h-full object-cover"
               />
@@ -148,7 +157,7 @@ const Travels = () => {
             {/* Secondary Image: Travel/Adventure */}
             <div className="absolute bottom-12 right-48 w-56 h-72 rounded-[40px] overflow-hidden border-4 border-white/10 shadow-2xl -rotate-12 group-hover:-rotate-6 transition-transform duration-700 z-10 opacity-60 group-hover:opacity-100">
               <img 
-                src="https://images.unsplash.com/photo-1503221043305-f7498f8b7888?auto=format&fit=crop&q=80" 
+                src={womenThumb2}
                 alt="Safe Travel" 
                 className="w-full h-full object-cover"
               />

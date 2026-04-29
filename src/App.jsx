@@ -5,7 +5,6 @@ import { useTheme } from './components/useTheme';
 import PackageDetails from './components/PackageDetails/PackageDetails';
 import EventCategoryDetails from './components/EventCategoryDetails/EventCategoryDetails';
 import Tickets from './components/Tickets/Tickets';
-import BlogDetails from './components/Blog/BlogDetails';
 import BookNow from './components/BookNow/BookNow';
 import PrivacyPolicy from './components/Policies/PrivacyPolicy';
 import TermsAndConditions from './components/Policies/TermsAndConditions';
@@ -21,7 +20,6 @@ function App() {
         <Route path="travel/:slug" element={<PackageDetails />} />
         <Route path="events/:category" element={<EventCategoryDetails />} />
         <Route path='ticket' element={<Tickets/>} />
-        <Route path="blog/:id" element={<BlogDetails />} />
         <Route path="book-now" element={<BookNow/>} />
         <Route path="privacy-policy" element={<PrivacyPolicy/>} />
         <Route path="terms-and-conditions" element={<TermsAndConditions/>} />

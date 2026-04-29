@@ -6,8 +6,13 @@ import {
   Compass, Heart, Award, Calendar, Sparkles
 } from 'lucide-react';
 import { FaWhatsapp, FaInstagram, FaFacebook, FaYoutube, FaPinterestP } from 'react-icons/fa6';
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+
+
 
 const BookNow = () => {
+  const navigate = useNavigate();
   const { darkMode } = useOutletContext();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -76,6 +81,20 @@ const BookNow = () => {
       darkMode ? 'bg-slate-950 text-white' : 'bg-white text-slate-900'
     }`}>
       
+
+
+    <button
+      onClick={() => navigate(-1)}
+      className={`absolute top-4 left-4  md:top-4 md:left-4 z-50 flex items-center gap-2 px-4 py-2 rounded-xl backdrop-blur-md border transition-all duration-300 shadow-lg ${
+        darkMode
+          ? "bg-white/10 border-white/20 text-white hover:bg-white/20"
+          : "bg-white/80 border-slate-200 text-slate-900 hover:bg-white"
+      }`}
+    >
+      <ArrowLeft size={18} />
+    </button>
+
+
       <div className="">
         {/* Main Grid Container: items-start is CRITICAL for sticky to work */}
        <div className="grid lg:grid-cols-12 gap-0 overflow-hidden items-stretch min-h-screen">
@@ -88,7 +107,7 @@ const BookNow = () => {
             
             <div className="relative z-10 space-y-4 lg:space-y-6">
               <div className="space-y-4 lg:space-y-6">
-                <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">
+                <div className="ml-20 md:ml-0 inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full">
                   <Sparkles size={14} className="text-amber-400" />
                   <span className="text-amber-400 font-semibold uppercase text-[10px] tracking-widest">Reservation Center</span>
                 </div>

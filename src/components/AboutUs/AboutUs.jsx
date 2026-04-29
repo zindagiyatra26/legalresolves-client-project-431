@@ -1,6 +1,8 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { ShieldCheck, Heart, Compass, Award, CheckCircle2, Users, Rocket, Sparkles } from 'lucide-react';
+import img1 from '../../assets/about_1.jpg'
+import img2 from '../../assets/about_2.jpg'
 
 const AboutUs = () => {
   const { darkMode } = useOutletContext();
@@ -65,10 +67,10 @@ const AboutUs = () => {
           {/* Abstract Image Grid (Matches Home Style) */}
           <div className="relative h-[500px] hidden lg:block">
             <div className="absolute top-0 right-0 w-2/3 h-[400px] rounded-[40px] overflow-hidden rotate-3 shadow-2xl border-4 border-white/10">
-               <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="Celebration" />
+               <img src={img1} className="w-full h-full object-cover" alt="Celebration" />
             </div>
             <div className="absolute bottom-0 left-0 w-2/3 h-[350px] rounded-[40px] overflow-hidden -rotate-6 shadow-2xl border-4 border-white/10 z-10">
-               <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="Travel" />
+               <img src={img2} className="w-full h-full object-cover" alt="Travel" />
             </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-amber-500 rounded-full blur-[80px] opacity-30 animate-pulse"></div>
           </div>
