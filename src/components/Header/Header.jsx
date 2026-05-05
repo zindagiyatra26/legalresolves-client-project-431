@@ -71,26 +71,21 @@ const prevScrollPos = useRef(0);
 
 
   return (
-    <nav className={`fixed left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 flex items-center justify-between px-4 lg:px-6 py-3 lg:py-3 
-      ${scrolled ? 'top-0 lg:top-4 w-[100%] lg:w-[95%] lg:max-w-7xl lg:rounded-[20px] shadow-2xl backdrop-blur-2xl' : 'top-0 w-full'} 
-      ${darkMode ? (scrolled ? 'bg-slate-900/80 border border-white/10' : 'bg-transparent') : (scrolled ? 'bg-white/80 border border-purple-100' : 'bg-transparent')}`}>
+
+    <nav className={`fixed  w-full left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 flex items-center justify-between px-4 lg:px-6 py-3 lg:py-3 
+      ${darkMode 
+        ? (scrolled ? 'bg-slate-900/80 border border-white/10' : 'bg-slate-900')
+        : (scrolled ? 'bg-white border border-purple-100' : 'bg-white') 
+      }`}>
       
       {/* Logo */}
-      <Link to="/" className="flex items-center gap-0 group">
-          {/* Logo Icon */}
-            <img 
-              src={logoIcon} 
-              alt="Logo" 
-              className="h-12"
-            />
-
-          {/* Logo Text */}
-            <img 
-              src={logoText} 
-              alt="Logo Text" 
-              className="h-11 mt-1"
-            />
-        </Link>
+      <Link 
+        to="/" 
+        className={`flex items-center gap-1 group`}
+      >
+          <img src={logoIcon} alt="Logo" className="h-12 md:h-13" />
+          <img src={logoText} alt="Logo Text" className="h-10 md:h-12" />
+      </Link>
 
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center gap-8">
@@ -101,12 +96,11 @@ const prevScrollPos = useRef(0);
           <Link 
             key={link.name}
             to="/ticket"
-           className={`text-[10px] font-bold uppercase tracking-[0.25em] transition-all hover:text-amber-500 
-             ${darkMode 
-                ? 'text-white/80' 
-                : (isInnerPage ? 'text-slate-800' : (scrolled ? 'text-slate-600' : 'text-white/80'))
-              }
-              `}
+        className={`text-[10px] font-bold uppercase tracking-[0.25em] transition-all hover:text-amber-500 
+          ${darkMode 
+            ? 'text-white/80' 
+            : (isInnerPage || !scrolled ? 'text-slate-800' : 'text-slate-800')
+          }`}
               
           >
             {link.name}
@@ -115,13 +109,11 @@ const prevScrollPos = useRef(0);
           <a 
             key={link.name} 
             href={link.href} 
-            className={`text-[10px] font-bold uppercase tracking-[0.25em] transition-all hover:text-amber-500 
-             ${darkMode 
-                ? 'text-white/80' 
-                : (isInnerPage ? 'text-slate-800' : (scrolled ? 'text-slate-600' : 'text-white/80'))
-              }
-                            
-              `}
+        className={`text-[10px] font-bold uppercase tracking-[0.25em] transition-all hover:text-amber-500 
+          ${darkMode 
+            ? 'text-white/80' 
+            : (isInnerPage || !scrolled ? 'text-slate-800' : 'text-slate-800')
+          }`}
           >
             {link.name}
           </a>

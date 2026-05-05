@@ -203,7 +203,7 @@ const Travels = () => {
       </div>
 
       {/*  FILTER BAR */}
-      <div className="max-w-7xl mx-auto lg:px-6 mb-6 lg:mb-12 sticky top-20 lg:top-30 z-40">
+      <div className="max-w-7xl mx-auto lg:px-6 mb-6 lg:mb-12 sticky top-20 lg:top-20 z-40">
         <div className={`flex items-center gap-4 overflow-x-auto p-4 lg:rounded-3xl border backdrop-blur-xl ${darkMode ? 'bg-slate-900/50 border-white/10' : 'bg-white/80 border-purple-100'}`}>
           <div className="flex items-center gap-2 mr-4 text-amber-600 font-semibold uppercase text-[10px] tracking-widest shrink-0">
             <Filter size={14} /> Filter Trips:

@@ -46,7 +46,7 @@ const Home = () => {
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-7xl md:text-[120px] font-bold uppercase tracking-tighter leading-[0.8]">
+              <h1 className="text-7xl md:text-[120px] font-bold uppercase tracking-tight leading-[0.8]">
                 Zindagi <br/>
                 <span className="text-transparent" style={{ WebkitTextStroke: '2px white' }}>Yatra</span>
               </h1>
@@ -58,9 +58,16 @@ const Home = () => {
               </div>
             </div>
 
-            <p className="text-gray-300 text-lg max-w-lg leading-relaxed font-medium">
+            {/* <p className="text-gray-300 text-lg max-w-lg leading-relaxed font-medium">
             Every trip is a chapter. Every celebration is a memory. Let us write yours.
-             </p>
+             </p> */}
+
+             <p className="text-gray-200 text-xl md:text-2xl max-w-lg font-medium">
+              Every trip is a chapter. Every celebration is a memory.{" "}
+              <span className="text-purple-500 font-semibold text-2xl md:text-3xl">
+                Let us write yours.
+              </span>
+            </p>
 
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 md:gap-6">
               {/* Primary Action: Explore Trips */}
